@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="title" content="Edge-Deployable Brainprint Authentication for Resource-Constrained IoT: A Differentiable Structure Learning Framework">
+  <meta name="description" content="DCLT is a unified framework formulating EEG channel selection as Differentiable Structure Learning for lightweight, high-accuracy IoT brainprint authentication.">
+  <meta name="keywords" content="EEG, Brainprint Recognition, Channel Selection, Vision Transformer, STE, Edge Deployment">
+  <meta name="author" content="Menghao Fang, Yuanyuan Wang, Junyao Chen, Zhaojie Lin, Xiangyu Yan, Haojun Fan, Lulu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Tianjin University">
+  <meta property="og:title" content="Edge-Deployable Brainprint Authentication for Resource-Constrained IoT">
+  <meta property="og:description" content="DCLT is a unified framework formulating EEG channel selection as Differentiable Structure Learning for lightweight, high-accuracy IoT brainprint authentication.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/DCLT-project">
+  <meta property="og:image" content="static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="DCLT Framework - Research Preview">
+  <meta property="article:author" content="Menghao Fang">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="EEG">
+  <meta property="article:tag" content="Brainprint Recognition">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <meta name="twitter:title" content="Edge-Deployable Brainprint Authentication for Resource-Constrained IoT">
+  <meta name="twitter:description" content="DCLT is a unified framework formulating EEG channel selection as Differentiable Structure Learning for lightweight, high-accuracy IoT brainprint authentication.">
+  <meta name="twitter:image" content="static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="DCLT Framework - Research Preview">
+
+  <meta name="citation_title" content="Edge-Deployable Brainprint Authentication for Resource-Constrained IoT: A Differentiable Structure Learning Framework">
+  <meta name="citation_author" content="Fang, Menghao">
+  <meta name="citation_author" content="Wang, Yuanyuan">
+  <meta name="citation_author" content="Chen, Junyao">
+  <meta name="citation_author" content="Lin, Zhaojie">
+  <meta name="citation_author" content="Yan, Xiangyu">
+  <meta name="citation_author" content="Fan, Haojun">
+  <meta name="citation_author" content="Lulu">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>Edge-Deployable Brainprint Authentication for Resource-Constrained IoT | Academic Research</title>
+  
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Edge-Deployable Brainprint Authentication for Resource-Constrained IoT: A Differentiable Structure Learning Framework",
+    "description": "DCLT is a unified framework formulating EEG channel selection as Differentiable Structure Learning for lightweight, high-accuracy IoT brainprint authentication.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Menghao Fang",
+        "affiliation": { "@type": "Organization", "name": "Tianjin University" }
+      },
+      {
+        "@type": "Person",
+        "name": "Yuanyuan Wang",
+        "affiliation": { "@type": "Organization", "name": "Tianjin University of Technology" }
+      }
+    ],
+    "url": "https://YOUR_DOMAIN.com/DCLT-project",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["EEG", "Brainprint Recognition", "Channel Selection", "Vision Transformer", "STE", "Edge Deployment"],
+    "abstract": "High-precision Electroencephalogram (EEG) analysis typically relies on dense multi-channel arrays, creating a fundamental conflict with the strict low-channel and low-power budgets of Internet of Things (IoT) edge devices. This bottleneck severely hinders the practical deployment of emerging wearable Brainprint Authentication systems. To address these challenges, we propose the Dynamic Channel Learning Transformer (DCLT), a unified framework formulating EEG channel selection as Differentiable Structure Learning tailored for IoT-based brainprint recognition.",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/"
+  }
+  </script>
+</head>
+<body>
+
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              
+              <h2 class="title is-1 publication-title">Edge-Deployable Brainprint Authentication for Resource-Constrained IoT: A Differentiable Structure Learning Framework</h1>
+              
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="#" target="_blank">Menghao Fang</a><sup>1,*</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="#" target="_blank">Yuanyuan Wang</a><sup>2,*</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="#" target="_blank">Junyao Chen</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="#" target="_blank">Zhaojie Lin</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="#" target="_blank">Xiangyu Yan</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="#" target="_blank">Haojun Fan</a><sup>1,†</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="#" target="_blank">Lulu</a><sup>1,†</sup>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>School of Disaster and Emergency Medicine, Tianjin University</span><br>
+                <span class="author-block"><sup>2</sup>College of Science, Tianjin University of Technology</span>
+                <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution | <sup>†</sup>Corresponding Authors</small></span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="https://poshangcun13.github.io/DCLT-IOT/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper(Coming Soon)</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://www.physionet.org/content/eegmmidb/1.0.0/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>PhysioNet MI</span>
+                    </a>
+                  </span>
+
+
+                  <span class="link-block">
+                    <a href="https://ieeexplore.ieee.org/document/5871728" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>DEAP</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/1702.02510" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>AMIGOS</span>
+                    </a>
+                  </span>
+
+                  <span class="link-block">
+                    <a href="https://github.com/poshangcun13/DCLT.git" target="_blank" class="external-link button is-normal is-rounded is-link">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                High-precision Electroencephalogram (EEG) analysis typically relies on dense multi-channel arrays, creating a fundamental conflict with the strict low-channel and low-power budgets of Internet of Things (IoT) edge devices. This bottleneck severely hinders the practical deployment of emerging wearable Brainprint Authentication systems. Furthermore, existing channel selection methods often lack end-to-end optimization and mechanistic interpretability. To address these challenges, we propose the Dynamic Channel Learning Transformer (DCLT), a unified framework formulating EEG channel selection as Differentiable Structure Learning tailored for IoT-based brainprint recognition. DCLT employs a Straight-Through Estimator (STE)-driven Top-K discrete gating mechanism, achieving a unified optimization of hard physical channel constraints and continuous gradient updates. A Transformer architecture then globally models the reconstructed sparse features. Furthermore, we introduce Dynamic-Static Consistency Analysis to evaluate the model's structural stability and hardware deployability beyond mere predictive accuracy. Extensive experiments across three datasets demonstrate that DCLT maintains over 90% identification accuracy while retaining only 25% of the original channels. Finally, edge-constrained deployment on clinical-grade data from 23 subjects confirms that DCLT significantly reduces computational complexity and inference latency. Ultimately, DCLT advances EEG analysis from feature learning to structure learning, enabling robust and lightweight IoT brain-computer interfaces.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Methodology & Results -->
+<!-- ===================== Methodology Carousel ===================== -->
+
+<!-- ===================== Methodology ===================== -->
+
+<!-- Bulma Carousel CSS -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.24/dist/css/bulma-carousel.min.css">
+
+<!-- Bulma Carousel JS -->
+<script defer
+src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.24/dist/js/bulma-carousel.min.js"></script>
+
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+
+    <!-- Title -->
+    <h2 class="title is-3 has-text-centered mb-6">
+      Methodology
+    </h2>
+
+    <!-- Carousel -->
+    <div id="results-carousel" class="carousel">
+
+      <!-- ===================== Item 1 ===================== -->
+      <div class="item">
+
+        <div class="method-card">
+
+          <div class="image-wrapper">
+            <img
+              src="static/images/carousel1.jpg"
+              alt="DCLT Framework Architecture"
+              class="method-image"
+            >
+          </div>
+
+          <div class="method-text">
+            Schematic diagram of the overall architecture of the DCLT framework,
+            illustrating the unified differentiable structure learning and global modeling paradigm.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================== Item 2 ===================== -->
+      <div class="item">
+
+        <div class="method-card">
+
+          <div class="image-wrapper">
+            <img
+              src="static/images/carousel2.jpg"
+              alt="Real-world EEG Data Acquisition"
+              class="method-image"
+            >
+          </div>
+
+          <div class="method-text">
+            Real-world EEG data acquisition environment and edge-oriented deployment
+            validation involving 23 subjects.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================== Item 3 ===================== -->
+      <div class="item">
+
+        <div class="method-card">
+
+          <div class="image-wrapper">
+            <img
+              src="static/images/carousel3.jpg"
+              alt="Performance consistency evolution"
+              class="method-image"
+            >
+          </div>
+
+          <div class="method-text">
+            Performance consistency evolution between dynamic routing and global
+            static subsets under varying channel budgets.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===================== Item 4 ===================== -->
+      <div class="item">
+
+        <div class="method-card">
+
+          <div class="image-wrapper">
+            <img
+              src="static/images/carousel4.jpg"
+              alt="Electrode Frequency Distribution"
+              class="method-image"
+            >
+          </div>
+
+          <div class="method-text">
+            Statistics of electrode selection frequency during the channel selection
+            process across different datasets.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===================== Style ===================== -->
+
+<style>
+
+  /* Carousel overall */
+  #results-carousel {
+
+    margin-top: 20px;
+
+    overflow: hidden;
+  }
+
+  /* Hide extra preview slides */
+  #results-carousel .carousel-container {
+
+    overflow: hidden !important;
+  }
+
+  /* Each slide */
+  #results-carousel .item {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+  }
+
+  /* Main card */
+  .method-card {
+
+    width: 100%;
+    max-width: 1100px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.08);
+
+    padding: 30px;
+
+    transition: all 0.3s ease;
+  }
+
+  /* Image area */
+  .image-wrapper {
+
+    width: 100%;
+    height: 580px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+  }
+
+  /* Image */
+  .method-image {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+  }
+
+  /* Description */
+  .method-text {
+
+    margin-top: 24px;
+
+    text-align: center;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    color: #444;
+
+    padding: 0 20px;
+  }
+
+  /* Navigation buttons beautify */
+  .carousel-nav-left,
+  .carousel-nav-right {
+
+    background: rgba(255,255,255,0.95) !important;
+
+    border-radius: 50% !important;
+
+    box-shadow:
+      0 4px 12px rgba(0,0,0,0.12);
+
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* Pagination dots */
+  .carousel-pagination .pagination-link {
+
+    background: #d0d0d0 !important;
+  }
+
+  .carousel-pagination .pagination-link.is-active {
+
+    background: #3273dc !important;
+  }
+
+  /* Mobile */
+  @media screen and (max-width: 768px) {
+
+    .method-card {
+
+      padding: 18px;
+    }
+
+    .image-wrapper {
+
+      height: 280px;
+    }
+
+    .method-text {
+
+      font-size: 0.95rem;
+
+      padding: 0;
+    }
+  }
+
+</style>
+
+
+<!-- ===================== Carousel Init ===================== -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  bulmaCarousel.attach('#results-carousel', {
+
+    slidesToScroll: 1,
+    slidesToShow: 1,
+
+    loop: true,
+
+    infinite: true,
+
+    autoplay: true,
+    autoplaySpeed: 3500,
+
+    pauseOnHover: true,
+
+    pagination: true,
+    navigation: true,
+
+  });
+
+});
+
+</script>
+
+
+<!-- ===================== Carousel Initialization ===================== -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  bulmaCarousel.attach('#results-carousel', {
+
+    slidesToScroll: 1,
+    slidesToShow: 1,
+
+    loop: true,
+
+    autoplay: true,
+    autoplaySpeed: 3000,
+
+    pauseOnHover: true,
+
+    pagination: true,
+    navigation: true,
+
+    infinite: true,
+
+  });
+
+});
+
+</script>
+
+   <!-- ===================== Experimental Results Carousel ===================== -->
+
+<section class="section">
+
+  <div class="container is-max-desktop">
+
+    <h2 class="title is-3 has-text-centered">
+      Experimental Results
+    </h2>
+
+    <div class="content has-text-justified">
+      <p>
+        The following tables present the quantitative performance of our proposed
+        DCLT framework compared to state-of-the-art baselines across multiple
+        datasets and varying channel budget configurations.
+      </p>
+    </div>
+
+    <!-- Carousel -->
+    <div id="results-table-carousel" class="carousel">
+
+      <!-- ===================== Table I ===================== -->
+      <div class="item">
+
+        <div class="box mt-5">
+
+          <h3 class="title is-5 has-text-centered">
+            Table I: Brainprint Recognition Performance on the PhysioNet MI Dataset
+            (64 vs. 16 Channels)
+          </h3>
+
+          <div class="table-image-container">
+            <img
+              src="static/images/table1.png"
+              alt="Table 1: PhysioNet MI Results"
+              class="table-carousel-image"
+            >
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ===================== Table II ===================== -->
+      <div class="item">
+
+        <div class="box mt-5">
+
+          <h3 class="title is-5 has-text-centered">
+            Table II: Random vs. DCLT-Selected 16-Channel Subsets on the PhysioNet MI Dataset
+          </h3>
+
+          <div class="table-image-container">
+            <img
+              src="static/images/table2.png"
+              alt="Table 2: Random vs Optimal Selection"
+              class="table-carousel-image"
+            >
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ===================== Table III ===================== -->
+      <div class="item">
+
+        <div class="box mt-5">
+
+          <h3 class="title is-5 has-text-centered">
+            Table III: Performance on DEAP (32 vs. 8 Channels) and AMIGOS (14 vs. 7 Channels) Datasets
+          </h3>
+
+          <div class="table-image-container">
+            <img
+              src="static/images/table3.png"
+              alt="Table 3: DEAP and AMIGOS Results"
+              class="table-carousel-image"
+            >
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ===================== Table IV ===================== -->
+      <div class="item">
+
+        <div class="box mt-5">
+
+          <h3 class="title is-5 has-text-centered">
+            Table IV: Comparison of Channel Selection Methods Under Different Channel Budgets
+          </h3>
+
+          <div class="table-image-container">
+            <img
+              src="static/images/table4.png"
+              alt="Table 4: Channel Selection Methods"
+              class="table-carousel-image"
+            >
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ===================== Table V ===================== -->
+      <div class="item">
+
+        <div class="box mt-5">
+
+          <h3 class="title is-5 has-text-centered">
+            Table V: Ablation Study on Core Components of the Proposed DCLT Framework
+          </h3>
+
+          <div class="table-image-container">
+            <img
+              src="static/images/table5.png"
+              alt="Table 5: Ablation Study"
+              class="table-carousel-image"
+            >
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ===================== Table VI ===================== -->
+      <div class="item">
+
+        <div class="box mt-5">
+
+          <h3 class="title is-5 has-text-centered">
+            Table VI: Inference Performance Comparison for Edge Deployment on a Real-World Dataset
+          </h3>
+
+          <div class="table-image-container">
+            <img
+              src="static/images/table6.png"
+              alt="Table 6: Inference Performance"
+              class="table-carousel-image"
+            >
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===================== Carousel Style ===================== -->
+
+<style>
+
+  /* Carousel spacing */
+  #results-table-carousel {
+    margin-top: 30px;
+  }
+
+  /* Each carousel item */
+  #results-table-carousel .item {
+    min-height: 450px;
+    padding: 10px;
+  }
+
+  /* Table image container */
+  .table-image-container {
+
+    width: 100%;
+    height: 450px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+  }
+
+  /* Table image */
+  .table-carousel-image {
+
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+  }
+
+  /* Box style enhancement */
+  #results-table-carousel .box {
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    height: 100%;
+  }
+
+  /* Mobile adaptation */
+  @media screen and (max-width: 768px) {
+
+    .table-image-container {
+      height: 350px;
+    }
+
+    #results-table-carousel .item {
+      min-height: auto;
+    }
+
+    #results-table-carousel .title.is-5 {
+      font-size: 1rem;
+    }
+  }
+
+</style>
+
+
+<!-- ===================== Carousel Initialization ===================== -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  bulmaCarousel.attach('#results-table-carousel', {
+
+    slidesToScroll: 1,
+    slidesToShow: 1,
+
+    loop: true,
+
+    autoplay: true,
+    autoplaySpeed: 4000,
+
+    pauseOnHover: true,
+
+    pagination: true,
+    navigation: true,
+
+    infinite: true,
+
+  });
+
+});
+
+</script>
+
+
+
+    
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
